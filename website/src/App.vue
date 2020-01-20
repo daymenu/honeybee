@@ -14,11 +14,11 @@ export default {
     
   },
   created() {
+    console.log(process.env)
     Connect()
   },
   methods: {
     send: function () {
-      console.log('ddd')
       SendMsg("hello")
     }
   }

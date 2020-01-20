@@ -33,7 +33,7 @@ func reader(conn *websocket.Conn) {
 }
 
 func serveWs(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.Host)
+	fmt.Println("ws://", r.Host)
 
 	ws, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -53,5 +53,5 @@ func setupRoutes() {
 func main() {
 	fmt.Println("Honeybee v0.01")
 	setupRoutes()
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8081", nil)
 }
